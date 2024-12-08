@@ -1,0 +1,261 @@
+<div class="bg-dark" style="margin-bottom: 50px;">
+  <h1 id="catalogo" style="text-align: center; color: white; padding: 10px;">
+     Consultas
+  </h1>
+</div>
+
+<div style="margin: 10px; padding: 10px; border-radius: 10px; border: ridge">
+
+  <div>
+    <h3>Consulta 1</h3>
+    <p>Nombre de los  médicos especializados en una área específica. (Ejemplo: Oncología)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c1}}
+        <p>{{nombre}} {{apellido}}, de {{especialidad}} (área {{id_area}})</p>
+      {{/each}}
+      <hr>
+    </div><br>
+
+    <p>Indicar nombre del área: 
+      <form action="/consultas1" method="POST">
+        <input type="text" name="c1-form" required placeholder="Oncología"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+    
+
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 2</h3>
+    <p>Nombre de los pacientes atendidos por un médico. (Requiere nombre y apellido del médico/a). (Ejemplo: Carmen Silva)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c2}}
+        <p>RUT: {{rut_paciente}}, NOMBRE: {{nombre_paciente}} {{apellido_paciente}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+
+    <p>
+      <form action="/consultas2" method="POST">
+        Indicar nombre del médico/a: 
+        <input type="text" name="c2-nombre-form" required placeholder="Carmen"><br><br>
+        Indicar apellido del médico/a: 
+        <input type="text" name="c2-apellido-form" required placeholder="Silva"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 3</h3>
+    <p>Registro de edificios al que debe acudir un paciente si tiene que hacerse un tratamiento en  específico (Ya conociendo la sala en la que le toca). (Ejemplo: Antibióticos)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c3}}
+        <p>Edificio:{{v_nro_edificio}}, Sala:{{v_salas}} (Tratamiento: {{v_tratamiento}})</p>
+      {{/each}}
+      <hr>
+    </div><br>
+
+    <p>Indicar nombre del tratamiento: 
+      <form action="/consultas3" method="POST">
+        <input type="text" name="c3-form" required placeholder="Antibióticos"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 4</h3>
+    <p>Pacientes que asisten al hospital por tratamientos leves.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c4}}
+        <p>RUT: {{rut}}, NOMBRE: {{nombre}} {{apellido}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 5</h3>
+    <p>Cantidad de laboratorios que tiene un edificio.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c5}}
+        <p>Hay {{nro_labs}} laboratorios en el edificio {{nro_edificios}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 6</h3>
+    <p>Cantidad de pacientes que cuentan con un tratamiento activo.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c6}}
+        <p>Hay {{tratamientos_activos}} pacientes con tratamientos activos</p>
+      {{/each}}
+      <hr>
+    </div><br>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 7</h3>
+    <p>Médicos que atienden desde las 10:00 AM en adelante (hasta las 12:00 AM) para todas las áreas.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c7}}
+        <p>RUT: {{rut}}, NOMBRE: {{nombre}} {{apellido}}, DEL ÁREA {{id_area}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 8</h3>
+    <p>Cantidad de pacientes que se atendieron en un área específica. (Ejemplo: Oncología )</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c8}}
+        <p>Hubo {{cantidad}} pacientes atendidos en {{v_area}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+    <p>Indicar nombre del área: 
+      <form action="/consultas8" method="POST">
+        <input type="text" name="c8-form" required placeholder="Oncología"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 9</h3>
+    <p>Registro de pacientes que están hospitalizados y la disponibilidad de camas que tiene el hospital en ese momento.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c9}}
+        <p>RUT: {{v_rut}}, NOMBRE: {{nombre}} {{apellido}}, CONDICIÓN: {{condicion}} ({{cantidad_camas}} camas disponibles)</p>
+      {{/each}}
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 10</h3>
+    <p>Pacientes que tienen sobrepeso (Con un IMC >= 30 siendo este IMC = Peso/Altura^2)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c10}}
+        <p>RUT: {{rut}}, NOMBRE: {{nombre}} {{apellido}}, IMC: {{imc}}</p>
+      {{/each}}
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 11</h3>
+    <p>Acceso a la ficha médica de un paciente a través de su rut (Ejemplo: ‘104751776’)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c11}}
+        <p>ID: {{id_ficha}}, FECHA: {{fecha}}, HORA {{hora}}, RAZON: {{razon}}, ANTECEDENTES: {{antecedentes}}, ANTECEDENTES FAMILIARES: {{antecedentes_familiares}}, ALTURA: {{altura}}, PESO: {{peso}}, SEXO: {{sexo}}, OCUPACIÓN: {{ocupacion}}, DIRECCIÓN: {{direccion}}, CLASE ECONOMICA: {{clase_economica}} </p>
+      {{/each}}
+      <hr>
+    </div><br>
+    <p>Indicar RUT del paciente: 
+      <form action="/consultas11" method="POST">
+        <input type="text" name="c11-form" required placeholder="104751776"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 12</h3>
+    <p>Salas específicas en las cuales los médicos trabajan para un area en particular (Ejemplo: Orientación).</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c12}}
+        <p>SALA: {{nro_sala}}, ESPECIALIDAD: {{especialidad}}</p>
+      {{/each}}
+      <hr>
+    </div><br>
+    <p>Indicar el nombre del área: 
+      <form action="/consultas12" method="POST">
+        <input type="text" name="c12-form" required placeholder="Orientación"><br><br>
+        <button class="btn btn-primary" type="submit">Enviar peticion</button>
+      </form>
+    </p>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 13</h3>
+    <p>Cantidad de enfermeros en los distintos edificios.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c13}}
+        <p>Hay {{cantidad_enfermeros}} enfermeros en el edificio {{nro_edificio}}</p>
+      {{/each}}
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 14</h3>
+    <p>Pacientes que acudieron al área de Oncología desde las 7:00 AM  hasta las 11:00 PM. (Cualquier fecha)</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      EJEMPLO
+      <hr>
+      {{#each c14}}
+        <p>RUT: {{rut}}, NOMBRE: {{n}} {{a}}, FECHA: {{f}}, HORA: {{h}}</p>
+      {{/each}}
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+  <div>
+    <h3>Consulta 15</h3>
+    <p>Cantidad de Partos/Nacimientos.</p>
+    <div class="bg-dark text-light rounded-2 p-4">
+      <hr>
+      {{#each c15}}
+        <p>Hubo {{partos}} partos en el hospital</p>
+      {{/each}}
+      <hr>
+    </div>
+  </div>
+  <hr>
+
+
+
+
+  
+</div>

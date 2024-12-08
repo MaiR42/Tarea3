@@ -1,0 +1,59 @@
+{{#if consulta1}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de médicos especializados en el área: {{consulta1}}</h4>
+        <hr>
+        {{#each resultado}}
+          <p>{{nombre}} {{apellido}}, de {{especialidad}} (área {{id_area}})</p>
+        {{/each}}
+      </div>
+{{/if}}
+
+{{#if nombre}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de los pacientes atendidos por el médico/a: {{nombre}} {{apellido}}</h4>
+        <hr>
+        {{#each resultado2}}
+          <p>RUT: {{rut_paciente}}, NOMBRE: {{nombre_paciente}} {{apellido_paciente}}</p>
+        {{/each}}
+      </div>
+{{/if}}
+
+{{#if tratamiento}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de la consulta para el tratamiento: {{tratamiento}}</h4>
+        <hr>
+        {{#each resultado3}}
+          <p>Edificio:{{v_nro_edificio}}, Sala:{{v_salas}} (Tratamiento: {{v_tratamiento}})</p>
+        {{/each}}
+      </div>
+{{/if}}
+
+{{#if area}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de pacientes que se atendieron en la área: {{area}}</h4>
+        <hr>
+        {{#each resultado8}}
+          <p>Hubo {{cantidad}} pacientes atendidos en {{v_area}}</p>
+        {{/each}}
+      </div>
+{{/if}}
+
+{{#if rut}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de ficha asociada al RUT: {{rut}}</h4>
+        <hr>
+        {{#each resultado11}}
+          <p>ID: {{id_ficha}}, FECHA: {{fecha}}, HORA {{hora}}, RAZON: {{razon}}, ANTECEDENTES: {{antecedentes}}, ANTECEDENTES FAMILIARES: {{antecedentes_familiares}}, ALTURA: {{altura}}, PESO: {{peso}}, SEXO: {{sexo}}, OCUPACIÓN: {{ocupacion}}, DIRECCIÓN: {{direccion}}, CLASE ECONOMICA: {{clase_economica}} </p>
+        {{/each}}
+      </div>
+{{/if}}
+
+{{#if area2}} 
+      <div class="bg-light p-4 mt-4">
+        <h4>Resultado de las salas asociadas al área: {{area2}}</h4>
+        <hr>
+        {{#each resultado12}}
+          <p>SALA: {{nro_sala}}, ESPECIALIDAD: {{especialidad}}</p>
+        {{/each}}
+      </div>
+{{/if}}

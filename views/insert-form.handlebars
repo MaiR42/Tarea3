@@ -1,0 +1,18 @@
+<h1 class="bg-dark" style="text-align: center; color: white; padding: 10px;">
+    {{tabla}}
+</h1>
+
+<div style="margin: 50px" class="text-center">
+  <h1 class="bg-light" style="text-align: center; padding: 10px;">
+    Formulario para insertar registro
+  </h1>
+
+  <form action="/insert/{{tabla}}" method="POST">
+    {{#each columnas}}
+      <label for="{{column_name}}">{{column_name}} [{{data_type}}]</label><br> 
+      <input type="text" id="{{column_name}}" name="{{column_name}}" required><br>
+    {{/each}}
+    <br>
+    <button type="submit" class="btn btn-success" style="font-size: 25px">Insertar Registro</button>
+  </form>
+</div>

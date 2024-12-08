@@ -1,0 +1,35 @@
+    <div class="bg-dark" style="margin-bottom: 50px;">
+      <h1 style="text-align: center; color: white; padding: 30px;">
+        <b>PÁGINA DE INICIO</b>
+      </h1>
+    </div>
+    
+    <div class="bg-dark" style="margin-bottom: 50px;">
+      <h1 style="text-align: center; color: white; padding: 10px;">
+        <b>TABLAS</b>
+      </h1>
+    </div>
+
+    <div style="padding: 20px; border-radius: 15px; border-radius: 15px; margin-bottom: 80px; margin: 3.5rem">
+      
+      <div class="row" style="margin-bottom: 15px;">
+
+        {{#each tablas}}
+        <div class="col-xl-3 col-md-4 col-sm-6" style="margin-bottom: 20px;">
+          <a class="btn btn-primary w-100 fs-5" title="Ver tabla {{table_name}}" href="/tabla/{{table_name}}">{{table_name}}</a> 
+        </div> 
+        {{/each}}
+
+      </div>
+    </div>
+    <hr>
+    <div class="text-center" style="padding: 20px; border-radius: 15px; border-radius: 15px; margin-bottom: 80px; margin: 3.5rem">
+      <a class="btn btn-primary btn-lg" style="font-size: 30px" href="/consultas">Ver consultas</a>
+    </div>
+
+
+
+
+    <div class="bg-dark text-white text-center fs-4 p-3">
+      <a style="color: white" href="/info">Información</a>
+    </div>

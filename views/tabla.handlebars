@@ -1,0 +1,65 @@
+<div style="border-color: white; border-style: ridge; border-radius:5px; margin: 10px; padding: 10px">
+  <div style="margin: 10px;" class="text-center">
+    <a href="/insert-form/{{tabla}}" class="btn btn-primary" style="font-size: 30px"> Insertar Registro</a>
+  </div>
+</div>
+
+<div style="border-color: white; border-style: ridge; border-radius:5px; margin: 10px; padding: 30px">
+  <div class="table-responsive"> <!-- Esto es para el scroll horizontal en pantallas pequeñas -->
+    <table class="table table-bordered border-dark">
+    <tr> 
+        <h1 class="bg-dark" style="text-align: center; color: white; padding: 10px;">
+          {{tabla}}
+        </h1>
+    </tr>
+    <thead>
+      <tr>
+       {{#each columnas}}
+          <td><b>{{column_name}} [{{data_type}}]</b></td>
+       {{/each}}
+          
+      </tr>
+    </thead>
+    <tbody>
+      {{#each datos}}
+         <tr>
+        {{#each ../columnas}}
+          <td>{{lookup ../this column_name}}</td>
+        {{/each}}
+
+
+
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  </div>
+  <!-- PLAN B, no funciono lo de los modificadores, borrar /editar -->
+  <h1 class="bg-dark" style="text-align: center; color: white; padding: 10px;">
+          Modificadores
+  </h1>
+  <h3>Formulario para actualizar registros</h3>
+  <form action="/edit/{{tabla}}/{{primeraColumna}}" method="POST">
+    <label>Insertar identificador de la tabla a modificar</label><br>
+    <input type="{{tipo}}" name="ID" required placeholder="{{primeraColumna}}"><br>
+
+    <label>Insertar atributo de la tabla a modificar</label><br>
+    <input type="text" name="columna" required placeholder="columna" ><br>
+
+    <label>Insertar registro a cambiar</label><br>
+    <input type="text" name="new_valor" required placeholder="nuevo valor" ><br>
+
+    <br><button type="submit" class="btn btn-success">Editar</button>
+  </form><hr>
+
+  <h3>Formulario para borrar registros</h3>
+  <form action="/delete/{{tabla}}/{{primeraColumna}}" method="POST">
+    <label>Insertar identificador de la tabla a eliminar ({{primeraColumna}})</label>
+    <input type="{{tipo}}" name="ID" required placeholder="{{primeraColumna}}"><br>
+
+    <br><button type="submit" class="btn btn-danger">Borrar</button>
+  </form>
+
+  
+  <br><br><br><br>
+</div>
